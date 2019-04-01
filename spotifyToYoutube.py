@@ -1,15 +1,21 @@
 #coding: utf-8
 import json
+# Spotify library.
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+# URL conversions.
+import urllib.request
+import bs4
+# Youtube stuff.
+import youtube
+
+# Opening our JSON configuration file (which has our tokens).
+with open("config.json", encoding='utf-8-sig') as json_file:
+    APIs = json.load(json_file)
 
 def getTracks(playlistURL):
-    # Opening our JSON configuration file (which has our tokens).
-    with open("config.json", encoding='utf-8-sig') as json_file:
-        SpotifyAPI = json.load(json_file)
-
     # Creating and authenticating our Spotify app.
-    client_credentials_manager = SpotifyClientCredentials(SpotifyAPI["client_id"], SpotifyAPI["client_secret"])
+    client_credentials_manager = SpotifyClientCredentials(APIs["spotify"]["client_id"], APIs["spotify"]["client_secret"])
     spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
     # Getting a playlist.
@@ -36,6 +42,31 @@ def getTracks(playlistURL):
 
     return trackList;
 
+def searchYoutubeAlternative(songName):
+    # YouTube will block you if you query too many songs using this search.
+    textToSearch = songName
+    query = urllib.parse.quote(textToSearch)
+    url = "https://www.youtube.com/results?search_query=" + query
+    response = urllib.request.urlopen(url)
+    html = response.read()
+    soup = bs4(html, 'html.parser')
+    for vid in soup.findAll(attrs={'class': 'yt-uix-tile-link'}):
+        print('https://www.youtube.com' + vid['href'])
+
+def searchYoutube(songName):
+    api = youtube.API(client_id=APIs["youtube"]["client_id"],
+              client_secret=APIs["youtube"]["client_secret"],
+              api_key=APIs["youtube"]["api_key"]);
+    video = api.get('search', q=songName, maxResults=1, type='video', order='relevance');
+    return("https://www.youtube.com/watch?v="+video["items"][0]["id"]["videoId"]);
+
 if (__name__ == "__main__"):
-    for i in getTracks("https://open.spotify.com/user/loudcodes_/playlist/4fIylfM1cQuMLr7tVQpSYn?si=xTELx4wkR_29J0n89I6dAQ"):
+    tracks = getTracks("https://open.spotify.com/user/loudcodes_/playlist/4fIylfM1cQuMLr7tVQpSYn?si=xTELx4wkR_29J0n89I6dAQ");
+    print("Searching songs...");
+    songs = [];
+    for i in tracks:
+        songs.append(searchYoutube(i));
+    print("Search finished!");
+    print("URL LIST: ");
+    for i in songs:
         print(i);
