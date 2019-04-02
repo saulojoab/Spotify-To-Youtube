@@ -9,8 +9,8 @@ I used the following libraries:<br>
   - <a href="https://github.com/plamere/spotipy">Spotipy (For handling the Spotify API)</a>
   - <a href="https://github.com/rohitkhatri/youtube-python">YouTube Python (For handling the Youtube API)</a><br><br>
 1 - To use those APIs, you gotta register your app on both the Spotify and YouTube API services.<br>
-2 - When you finish doing that, <b>create a JSON file</b> named <i>"config.json"</i> on the project's main folder.
-3 - The config.json file <b>must have</b> the following format:
+2 - When you finish doing that, <b>create a JSON file</b> named <i>"config.json"</i> on the project's main folder.<br>
+3 - The <i>config.json</i> file <b>must have</b> the following format:
 ```js
 {
     "spotify":
