@@ -61,12 +61,13 @@ def searchYoutube(songName):
     return("https://www.youtube.com/watch?v="+video["items"][0]["id"]["videoId"]);
 
 if (__name__ == "__main__"):
-    tracks = getTracks("https://open.spotify.com/user/loudcodes_/playlist/4fIylfM1cQuMLr7tVQpSYn?si=xTELx4wkR_29J0n89I6dAQ");
+    tracks = getTracks(str(input("Insert Spotify playlist URL: ")));
     print("Searching songs...");
     songs = [];
     for i in tracks:
         songs.append(searchYoutube(i));
     print("Search finished!");
+
     print("URL LIST: ");
     for i in songs:
         print(i);
