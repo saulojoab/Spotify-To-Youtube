@@ -27,7 +27,8 @@ All you gotta do is insert your <b> >>PUBLIC<< </b> <a href="http://www.spotify.
 # What did you use to make it? :thinking:
 I used the following libraries:<br>
   - <a href="https://github.com/plamere/spotipy">Spotipy (For handling the Spotify API)</a>
-  - <a href="https://github.com/rohitkhatri/youtube-python">YouTube Python (For handling the Youtube API)</a><br><br>
+  - <a href="https://github.com/rohitkhatri/youtube-python">YouTube Python (For handling the YouTube API)</a>
+  - <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup (For the YouTube alternative search)</a><br><br>
 
 # Why did you make it?
 Studying purpouses, and it might actually be useful to someone. I think <a href="http://discord.app">Discord</a> bots could use that to queue songs and stuff. 
