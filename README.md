@@ -7,7 +7,7 @@ All you gotta do is insert your <a href="http://www.spotify.com">Spotify</a> pla
 # What did you use to make it? :thinking:
 I used the following libraries:<br>
   - <a href="https://github.com/plamere/spotipy">Spotipy (For handling the Spotify API)</a>
-  - <a href="https://github.com/rohitkhatri/youtube-python">YouTube Python (For handling the Youtube API)</a>
+  - <a href="https://github.com/rohitkhatri/youtube-python">YouTube Python (For handling the Youtube API)</a><br><br>
 1 - To use those APIs, you gotta register your app on both the Spotify and YouTube API services.<br>
 2 - When you finish doing that, create a JSON file named "config.json" on the project's main folder.
 3 - The config.json file must have the following format:
