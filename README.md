@@ -8,3 +8,6 @@ All you gotta do is insert your <a href="http://www.spotify.com">Spotify</a> pla
 I used the following libraries:<br>
   - <a href="https://github.com/plamere/spotipy">Spotipy (For handling the Spotify API)</a>
   - <a href="https://github.com/rohitkhatri/youtube-python">Youtube Python (For handling the Youtube API)</a>
+
+# Why did you make it?
+Studying purpouses, and it might actually be useful to someone. I think <a href="http://discord.app">Discord</a> bots could use that to queue songs and stuff. 
