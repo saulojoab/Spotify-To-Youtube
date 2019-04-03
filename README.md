@@ -1,5 +1,5 @@
 # Spotify To Youtube ▶
-A simplistic way to find Spotify songs on YouTube.<br>
+A simplistic way to find Spotify songs from a playlist on YouTube.<br>
 <b><i>IMPORTANT:</i> Please check the issue I've pinned <a href="https://github.com/saulojoab/Spotify-To-Youtube/issues">here</a>.</b>
 
 # How does it work? 😮
