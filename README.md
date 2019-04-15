@@ -3,7 +3,7 @@ A simplistic way to find songs from a Spotify playlist on YouTube.<br>
 <b><i>IMPORTANT:</i> Please check the issue I've pinned <a href="https://github.com/saulojoab/Spotify-To-Youtube/issues">here</a>.</b>
 
 # How does it work? 😮
-All you gotta do is insert your <b> >>PUBLIC<< </b> <a href="http://www.spotify.com">Spotify</a> playlist URL when prompted, then the app will automatically search all songs from that playlist on <a href="http://youtube.com">Youtube</a> and return the URLs. Check below for instructions on how to make it work:
+All you gotta do is insert your <b> >>PUBLIC<< </b> <a href="http://www.spotify.com">Spotify</a> playlist URL when prompted, then the app will automatically search all songs from that playlist on <a href="http://youtube.com">YouTube</a> and return the URLs. Check below for instructions on how to make it work:
 
 # How to use it?
 1 - To use the script, you gotta register your app on both the Spotify and YouTube API services.<br>
