@@ -12,6 +12,10 @@ import youtube
 # Opening our JSON configuration file (which has our tokens).
 with open("config.json", encoding='utf-8-sig') as json_file:
     APIs = json.load(json_file)
+   
+api = youtube.API(client_id=APIs["youtube"]["client_id"],
+      client_secret=APIs["youtube"]["client_secret"],
+      api_key=APIs["youtube"]["api_key"]);
 
 def getTracks(playlistURL):
     # Creating and authenticating our Spotify app.
@@ -23,7 +27,7 @@ def getTracks(playlistURL):
 
     trackList = [];
     # For each track in the playlist.
-    for i in results["tracks"]["items"]:
+    for i in results["items"]:
         # In case there's only one artist.
         if (i["track"]["artists"].__len__() == 1):
             # We add trackName - artist.
@@ -54,9 +58,6 @@ def searchYoutubeAlternative(songName):
         print('https://www.youtube.com' + vid['href'])
 
 def searchYoutube(songName):
-    api = youtube.API(client_id=APIs["youtube"]["client_id"],
-              client_secret=APIs["youtube"]["client_secret"],
-              api_key=APIs["youtube"]["api_key"]);
     video = api.get('search', q=songName, maxResults=1, type='video', order='relevance');
     return("https://www.youtube.com/watch?v="+video["items"][0]["id"]["videoId"]);
 
